@@ -1,59 +1,131 @@
-# Multipurpose Security WebStack
+# Multipurpose Security WebStack 🔐
 
-A modern Flask web app for secure password generation, passphrase creation, hashing, and live strength telemetry.
+<div align="center">
 
 ![Security WebStack Banner](https://capsule-render.vercel.app/api?type=waving&height=220&text=Security%20WebStack&fontAlign=50&fontAlignY=38&color=0:0b132b,45:1c2541,100:5bc0be&fontColor=f5f7ff&desc=By%20Shivansh%20Mishra&descAlignY=58)
 
-![Python](https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Production%20Ready-1f9d55?style=for-the-badge)
+<p>
+  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img src="https://img.shields.io/badge/Status-Live-1f9d55?style=for-the-badge" />
+</p>
 
-## Live Demo
+**A full-stack Flask web app for secure password generation, passphrase creation, cryptographic hashing, and live strength analysis.**
 
-**Try it here:** [https://random-password-generator-by-shivansh-mishra.vercel.app/](https://random-password-generator-by-shivansh-mishra.vercel.app/)
+[![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Try_It_Now-7C3AED?style=for-the-badge)](https://random-password-generator-by-shivansh-mishra.vercel.app/)
 
-### Visual Snapshot
+</div>
 
-| Security Modules | What You Get |
+---
+
+## 🎯 What Is This?
+
+Security WebStack is a **production-deployed security toolkit** built with Python + Flask, providing day-to-day cryptographic utilities through a clean, intuitive web interface. No heavy frameworks, no unnecessary complexity — just practical, reliable security tools.
+
+**Built as a team project** led by Shivansh Mishra, designed for real-world use and deployed on Vercel.
+
+---
+
+## ✨ Features
+
+| Module | Description |
 |---|---|
-| 🔐 Password Forge | Live score + strength feedback |
-| 🧠 Passphrase Studio | Quick memorable secure phrases |
-| 🧪 Hash Lab | Digest generation + verification |
-| 🗂 Session Vault | Local save, import, and export |
+| 🔐 **Password Forge** | Configurable password generation with live strength score & telemetry charts |
+| 🧠 **Passphrase Studio** | Generate memorable high-entropy passphrases (BIP-39 style) |
+| 🧪 **Hash Lab** | Generate and verify cryptographic digests (MD5, SHA-1, SHA-256, SHA-512) |
+| 🗂️ **Session Vault** | Save, manage, import & export passwords as JSON — browser-local only |
+| 📊 **Strength Telemetry** | Real-time visual feedback on password entropy and weakness patterns |
+| ⚡ **Batch Mode** | Generate multiple passwords at once for bulk use cases |
 
-## Overview
+---
 
-This project is built for practical, day-to-day security workflows with a clean and simple interface.
+## 🛠️ Tech Stack
 
-## Core Features
+| Layer | Technology |
+|---|---|
+| Backend | Python 3.12 + Flask 3.x |
+| Crypto | `secrets` (randomness) + `hashlib` (hashing) |
+| Frontend | Vanilla JS + CSS (no heavy frameworks) |
+| Deployment | Vercel (serverless via `vercel.json`) |
+| WSGI | `wsgi.py` for production server |
 
-- Password Forge with live strength score and telemetry
-- Batch password generation for quick options
-- Passphrase Studio for memorable high-strength phrases
-- Hash Lab with digest generation and verification
-- Session Vault with JSON export and import
+---
 
-## Team
+## 🔒 Security Design
 
-- Leader: Shivansh Mishra
-- Team Members: Ravi Gupta, Harshvardhan Sisodiya, Vishal Patel, Dhuru Madhuwal
+- **True Randomness**: Password generation uses Python's `secrets` module (CSPRNG), not `random`
+- **Client-Side Vault**: All saved passwords stay in your browser (`sessionStorage`) — never sent to any server
+- **No Data Logging**: Zero server-side storage of passwords, passphrases, or hashes
+- **Open Source**: Full transparency — read the code yourself
 
-## Quick Start
+---
+
+## 🗂️ Project Structure
+
+```
+password-generator/
+├── Random_Password_Generator.py  # Core Flask app + all routes
+├── api/                          # Vercel serverless API handler
+├── static/                       # CSS, JS, assets
+├── templates/                    # Jinja2 HTML templates
+├── wsgi.py                       # WSGI entrypoint for production
+├── requirements.txt              # Python dependencies
+├── vercel.json                   # Vercel deployment config
+└── Procfile                      # Heroku/Render entrypoint
+```
+
+---
+
+## 🚀 Run Locally
 
 ```bash
+# 1. Clone the repo
+git clone https://github.com/Shivanshmishra7275/Random-Password-Generator.git
+cd Random-Password-Generator
+
+# 2. Install dependencies
 pip install -r requirements.txt
+
+# 3. Run the app
 python Random_Password_Generator.py
 ```
 
-Open http://127.0.0.1:5000
+Open **http://127.0.0.1:5000** in your browser.
 
-## Security Notes
+---
 
-- Password randomness uses Python `secrets`
-- Hashing uses Python `hashlib`
-- Vault data remains browser-local unless exported
+## 🌐 API Endpoints
 
-## Health Check
+| Endpoint | Method | Description |
+|---|---|---|
+| `/` | GET | Main app UI |
+| `/healthz` | GET | Health check → `{"status":"ok"}` |
+| `/generate` | POST | Generate password(s) |
+| `/hash` | POST | Hash a string |
+| `/verify` | POST | Verify hash match |
 
-- Endpoint: `/healthz`
-- Expected response: `{"status":"ok","service":"security-webstack"}`
+---
+
+## 👥 Team
+
+| Role | Name |
+|---|---|
+| 🏆 Leader | Shivansh Mishra |
+| 👨‍💻 Member | Ravi Gupta |
+| 👨‍💻 Member | Harshvardhan Sisodiya |
+| 👨‍💻 Member | Vishal Patel |
+| 👨‍💻 Member | Dhuru Madhuwal |
+
+---
+
+## 👤 Lead Developer
+
+**Shivansh Mishra** — ML Builder & AI Product Explorer  
+📍 Lucknow, India · [GitHub](https://github.com/Shivansh-mishraji) · [Portfolio](https://shivansh-mishraji.github.io/Portfolio-Website/)
+
+---
+
+<div align="center">
+  <i>Built for real-world use · Deployed on Vercel · Zero server-side data storage</i>
+</div>
