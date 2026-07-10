@@ -10,3 +10,6 @@ venv/
 .DS_Store
 Thumbs.db
 .cursor/
+# Auto-added safety rules
+node_modules/
+*.whl
