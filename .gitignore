@@ -13,3 +13,12 @@ Thumbs.db
 # Auto-added safety rules
 node_modules/
 *.whl
+
+# Safety rules
+!.env.example
+*.joblib
+*.pkl
+*.db
+*.sqlite3
+Datasets/
+*.csv
