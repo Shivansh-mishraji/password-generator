@@ -1,3 +1,8 @@
+"""
+Random Password Generator module.
+Part of the password-generator package.
+"""
+
 import hashlib
 import math
 import os
