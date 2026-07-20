@@ -77,7 +77,7 @@ class PasswordOptions:
     avoid_repeats: bool
 
 
-def parse_bool(value, default=False):
+def parse_bool(value, default=False): -> None:
     if isinstance(value, bool):
         return value
     if isinstance(value, str):
