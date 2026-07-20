@@ -1,3 +1,7 @@
+import logging
+
+logger = logging.getLogger(__name__)
+
 """
 Random Password Generator module.
 Part of the password-generator package.
