@@ -82,6 +82,7 @@ class PasswordOptions:
 
 
 def parse_bool(value, default=False): -> None:
+    """Handle parse bool and return the result."""
     if isinstance(value, bool):
         return value
     if isinstance(value, str):
