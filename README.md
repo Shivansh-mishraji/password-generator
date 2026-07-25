@@ -4,7 +4,6 @@
 
 ![Security WebStack Banner](https://capsule-render.vercel.app/api?type=venom&height=280&text=Security%20WebStack&fontSize=62&fontAlign=50&fontAlignY=52&color=0:0b132b,50:1c2541,100:0d3b3b&fontColor=5bc0be&desc=Password%20Forge%20%7C%20Hash%20Lab%20%7C%20Passphrase%20Studio%20%7C%20Session%20Vault&descFontColor=7dd3fc&descAlignY=72&animation=fadeIn)
 
-
 <p>
   <img src="https://img.shields.io/badge/Python-3.12+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
   <img src="https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask&logoColor=white" />
