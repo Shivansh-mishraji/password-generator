@@ -102,6 +102,7 @@ def parse_int(value, default, minimum, maximum):
 
 
 def parse_str(value, default=""):
+    """Handle parse str and return the result."""
     if value is None:
         return default
     return str(value)
