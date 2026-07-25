@@ -122,7 +122,7 @@ Open **http://127.0.0.1:5000** in your browser.
 
 ## 👤 Lead Developer
 
-**Shivansh Mishra** — ML Builder & AI Product Explorer  
+**Shivansh Mishra** — ML Builder & AI Product Explorer
 📍 Lucknow, India · [GitHub](https://github.com/Shivansh-mishraji) · [Portfolio](https://shivansh-mishraji.github.io/Portfolio-Website/)
 
 ---
