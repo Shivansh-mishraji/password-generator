@@ -93,6 +93,7 @@ def parse_bool(value, default=False): -> None:
 
 
 def parse_int(value, default, minimum, maximum):
+    """Handle parse int and return the result."""
     try:
         number = int(value)
     except (TypeError, ValueError):
