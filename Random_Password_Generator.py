@@ -108,6 +108,7 @@ def unique_string(value):
     return "".join(dict.fromkeys(value))
 
 def estimate_entropy(password):
+    """Handle estimate entropy and return the result."""
     unique_count = len(set(password))
     pool_size = unique_count if unique_count > 1 else 2
     return round(len(password) * math.log2(pool_size), 2)
