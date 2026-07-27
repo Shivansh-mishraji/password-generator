@@ -104,6 +104,7 @@ def parse_str(value, default=""):
     return str(value)
 
 def unique_string(value):
+    """Handle unique string and return the result."""
     return "".join(dict.fromkeys(value))
 
 def estimate_entropy(password):
