@@ -69,7 +69,6 @@ SECURITY_TIPS = [
 # Lightweight in-memory request tracker for per-IP throttling.
 REQUEST_WINDOW = defaultdict(deque)
 
-
 @dataclass(frozen=True)
 class PasswordOptions:
     length: int
@@ -79,7 +78,6 @@ class PasswordOptions:
     symbols: bool
     exclude_ambiguous: bool
     avoid_repeats: bool
-
 
 def parse_bool(value, default=False): -> None:
     """Handle parse bool and return the result."""
@@ -91,7 +89,6 @@ def parse_bool(value, default=False): -> None:
         return bool(value)
     return default
 
-
 def parse_int(value, default, minimum, maximum):
     """Handle parse int and return the result."""
     try:
@@ -100,23 +97,19 @@ def parse_int(value, default, minimum, maximum):
         number = default
     return max(minimum, min(number, maximum))
 
-
 def parse_str(value, default=""):
     """Handle parse str and return the result."""
     if value is None:
         return default
     return str(value)
 
-
 def unique_string(value):
     return "".join(dict.fromkeys(value))
-
 
 def estimate_entropy(password):
     unique_count = len(set(password))
     pool_size = unique_count if unique_count > 1 else 2
     return round(len(password) * math.log2(pool_size), 2)
-
 
 def build_charset(options, custom_symbols="", exclude_chars=""):
     groups = []
@@ -146,7 +139,6 @@ def build_charset(options, custom_symbols="", exclude_chars=""):
 
     pool = unique_string("".join(groups))
     return groups, pool
-
 
 def generate_password(options, custom_symbols="", exclude_chars=""):
     groups, pool = build_charset(options, custom_symbols=custom_symbols, exclude_chars=exclude_chars)
@@ -184,7 +176,6 @@ def generate_password(options, custom_symbols="", exclude_chars=""):
     secrets.SystemRandom().shuffle(password_chars)
     return "".join(password_chars)
 
-
 def score_password(password):
     unique_count = len(set(password))
     categories = 0
@@ -212,7 +203,6 @@ def score_password(password):
         label = "Weak"
     return score, label
 
-
 def detect_password_warnings(password):
     warnings = []
     lowered = password.lower()
@@ -232,7 +222,6 @@ def detect_password_warnings(password):
 
     return warnings
 
-
 def generate_passphrase(word_count, separator, include_number, title_case):
     if word_count < 2 or word_count > 8:
         raise ValueError("Word count must be between 2 and 8.")
@@ -246,17 +235,14 @@ def generate_passphrase(word_count, separator, include_number, title_case):
         phrase = f"{phrase}{separator}{secrets.randbelow(9000) + 1000}"
     return phrase
 
-
 def hash_text(text, algorithm):
     return hashlib.new(algorithm, text.encode("utf-8")).hexdigest()
-
 
 def request_ip():
     xff = request.headers.get("X-Forwarded-For", "")
     if xff:
         return xff.split(",")[0].strip()
     return request.remote_addr or "unknown"
-
 
 def allow_request(ip):
     now = time.time()
@@ -270,7 +256,6 @@ def allow_request(ip):
 
     window.append(now)
     return True, 0
-
 
 def create_app():
     app = Flask(__name__)
@@ -436,9 +421,7 @@ def create_app():
 
     return app
 
-
 app = create_app()
-
 
 if __name__ == "__main__":
     app.run(
