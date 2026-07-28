@@ -1,3 +1,16 @@
+__all__ = [
+    "PasswordOptions",
+    "parse_bool",
+    "parse_int",
+    "parse_str",
+    "unique_string",
+    "estimate_entropy",
+    "build_charset",
+    "generate_password",
+    "score_password",
+    "detect_password_warnings"
+]
+
 import logging
 
 logger = logging.getLogger(__name__)
