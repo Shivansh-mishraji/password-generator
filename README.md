@@ -129,3 +129,5 @@ Open **http://127.0.0.1:5000** in your browser.
 <div align="center">
   <i>Built for real-world use · Deployed on Vercel · Zero server-side data storage</i>
 </div>
+
+> **Note:** This section is actively maintained and updated.
